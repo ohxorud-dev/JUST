@@ -188,8 +188,8 @@ async def do_work(ctx):
 
 @app.command(aliases=['eval'])
 async def eval_func(ctx,*,exec_com:str):
-    if check_level(ctx.author.id) is not "권한 없음":
+    if check_level(ctx.author.id) != "권한 없음":
         exec(exec_com)
-        ctx.channel.send("성공적으로 실행 되었습니다")
+        await ctx.channel.send("성공적으로 실행 되었습니다")
 
 app.run('OTA5MDUwMzMwMDQ0NTYzNDU3.YY-pGA.HPPhEFpXM-7PiHUA5QoGVl_rLPM')
